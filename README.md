@@ -1,4 +1,10 @@
 # [**FTPS**](https://github.com/chonjay21/docker-ftps)
+![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/chonjay21/ftps)
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/chonjay21/ftps)
+![Docker Pulls](https://img.shields.io/docker/pulls/chonjay21/ftps)
+![GitHub](https://img.shields.io/github/license/chonjay21/docker-ftps)
+![Docker Stars](https://img.shields.io/docker/stars/chonjay21/ftps?style=social)
+![GitHub stars](https://img.shields.io/github/stars/chonjay21/docker-ftps?style=social)
 ## FTPS based on official latest alpine image
 * Support Authentication
 * Support SSL(ftps) with automatically generated self signed certificate
