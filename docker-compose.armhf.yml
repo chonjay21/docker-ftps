@@ -1,0 +1,26 @@
+version: '2.2'
+services:
+  ftps-arm32v7:
+    container_name: ftps-arm32v7
+    build:
+      context: .
+      dockerfile: Dockerfile.armhf
+    image: "chonjay21/ftps:arm32v7-latest"
+    ports:
+      - "21:21"
+      - "60000-60010:60000-60010"
+    environment:
+      - FORCE_REINIT_CONFIG=false
+      - USE_SSL=true
+      - APP_USER_NAME=admin
+      - APP_USER_PASSWD=admin
+      - APP_UID=1000
+      - APP_GID=1000
+      - PASSV_MIN_PORT=60000
+      - PASSV_MAX_PORT=60010
+      - APP_UMASK=007
+      - TZ=America/Los_Angeles
+    volumes:
+      - /vsftpd/data:/home/vsftpd/data
+      #- /usr/certs/cert.key:/usr/certs/cert.key:ro
+      #- /usr/certs/cert.crt:/usr/certs/cert.crt:ro
