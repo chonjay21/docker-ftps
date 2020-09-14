@@ -5,6 +5,7 @@
 * Support passive mode ftps
 * Support umask change
 * Support UserID|GroupID change
+* Support custom TimeZone
 * Support custom event script override
 
 <br />
