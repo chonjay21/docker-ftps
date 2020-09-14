@@ -52,6 +52,7 @@ docker run \
   -e FORCE_REINIT_CONFIG=false                  `#optional` \
   -e USE_SSL=true                               `#optional` \
   -e APP_UMASK=007                              `#optional` \
+  -e TZ=America/Los_Angeles                     `#optional` \
   -p 21:21 \
   -p 60000-60010:60000-60010 \
   -v /vsftpd/data:/home/vsftpd/data \
@@ -84,6 +85,7 @@ services:
       - FORCE_REINIT_CONFIG=false                 #optional
       - USE_SSL=true                              #optional
       - APP_UMASK=007                             #optional
+      - TZ=America/Los_Angeles                    #optional
     volumes:
 	    - /vsftpd/data:/home/vsftpd/data
       - /vsftpd/cert.key:/usr/certs/cert.key:ro	  #optional for custom certificate(USE_SSL=true)
@@ -105,6 +107,7 @@ services:
 | `-e FORCE_REINIT_CONFIG=false` | if true, always reinitialize APP_USER_NAME etc ...  | O |
 | `-e USE_SSL=false` | if true, use ssl for ftps (with automatically created selfsigned certificate) | O |
 | `-e APP_UMASK=007` | for filesystem permission umask  | O |
+| `-e TZ=America/Los_Angeles` | for timezone  | O |
 | `-v /home/vsftpd/data` | for data access with this container |  |
 | `-v /usr/certs/cert.key` | for custom ssl certificate | O |
 | `-v /usr/certs/cert.crt` | for custom ssl certificate | O |
