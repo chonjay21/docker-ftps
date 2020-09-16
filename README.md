@@ -6,6 +6,7 @@
 ![Docker Stars](https://img.shields.io/docker/stars/chonjay21/ftps?style=social)
 ![GitHub stars](https://img.shields.io/github/stars/chonjay21/docker-ftps?style=social)
 ## FTPS based on official latest alpine image
+* Support Multiple architectures
 * Support Authentication
 * Support SSL(ftps) with automatically generated self signed certificate
 * Support passive mode ftps
@@ -33,6 +34,7 @@ The architectures supported by this image are:
 | :----: | --- |
 | x86-64 | amd64, latest |
 | armhf | arm32v7, latest |
+| arm64 | arm64v8, latest |
 
 <br />
 
@@ -89,14 +91,14 @@ services:
       - APP_GID=1000
       - PASSV_MIN_PORT=60000
       - PASSV_MAX_PORT=60010
-      - FORCE_REINIT_CONFIG=false                 #optional
-      - USE_SSL=true                              #optional
-      - APP_UMASK=007                             #optional
-      - TZ=America/Los_Angeles                    #optional
+      - FORCE_REINIT_CONFIG=false                  #optional
+      - USE_SSL=true                               #optional
+      - APP_UMASK=007                              #optional
+      - TZ=America/Los_Angeles                     #optional
     volumes:
-	    - /vsftpd/data:/home/vsftpd/data
-      - /vsftpd/cert.key:/usr/certs/cert.key:ro	  #optional for custom certificate(USE_SSL=true)
-      - /vsftpd/cert.crt:/usr/certs/cert.crt:ro	  #optional for custom certificate(USE_SSL=true)
+      - /vsftpd/data:/home/vsftpd/data
+      - /vsftpd/cert.key:/usr/certs/cert.key:ro    #optional for custom certificate(USE_SSL=true)
+      - /vsftpd/cert.crt:/usr/certs/cert.crt:ro    #optional for custom certificate(USE_SSL=true)
 ```
 
 # Parameters
