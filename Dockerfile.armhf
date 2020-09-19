@@ -32,6 +32,7 @@ ADD sources/ $FTPS_SOURCE_DIR/
 
 # set permission
 RUN chmod 770 $FTPS_SOURCE_DIR/*.sh; \
-	chmod 770 $FTPS_SOURCE_DIR/eventscripts/*.sh
+	chmod 770 $FTPS_SOURCE_DIR/eventscripts/*.sh; \
+	mkdir -p $FTPS_USER_HOME/data
 
 ENTRYPOINT $FTPS_SOURCE_DIR/entrypoint.sh

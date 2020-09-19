@@ -21,7 +21,6 @@ else
 	
 	
 	echo "[] Creating User: $APP_USER_NAME ..."
-		mkdir -p $FTPS_USER_HOME/data
 		useradd -m -d $FTPS_USER_HOME -s /bin/bash $APP_USER_NAME || true
 		
 		groupadd $APP_USER_NAME || true
@@ -62,7 +61,7 @@ else
 	echo "[] Done."
 	
 	echo "[] Fixing permision ..."
-		chown $APP_USER_NAME:$APP_USER_NAME $FTPS_USER_HOME || true
+		chown $APP_USER_NAME:$APP_USER_NAME $FTPS_USER_HOME
 		chown $APP_USER_NAME:$APP_USER_NAME $FTPS_USER_HOME/data || true
 	echo "Done."
 	
